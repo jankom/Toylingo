@@ -1,0 +1,40 @@
+ToyLingo
+
+== RANDOM IDEAS ==
+
+-- main question now? --
+
+Do we do natives as Lua with stack .OR. like Neko-vm with limited number of arguments.
+
+ToyValue must be one generic type (Now Literal, but this now is prob. clumsy)
+
+Do we do polish notation or stack based postfix notation?
+
+
+-- toylingo rebol like --
+
+age: 100
+year: add 200 20
+
+-- toylingo stack based --
+
+100 :age
+200 20 add :year
+100 :age
+age: 20 :year
+"Janko" :name
+"my name is " name: join print
+
+100 :port
+[ "hello world" ] :handler
+port: handler: serve
+
+{	"janko" :name
+	31		:age
+	[ "hi" print ] :say-hi } :person
+
+'say-hi person of do
+'age person of print
+
+100 50 :my-age: add print ( value is retained on stack )
+"my-age: " my-age: print
