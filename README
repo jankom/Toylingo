@@ -11,6 +11,10 @@ num2: add 100 200
 num3: add 100 add 300 add 5
 num5: add inc 2 inc add 1 2
 
+inline assignment wors too
+
+num6: add num7: inc 100 inc 200
+
 You can define native functions easily in Go!!!
 
 == WHAT NEXT ==

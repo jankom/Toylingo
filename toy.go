@@ -64,6 +64,7 @@ func doTag(tags []string, idx int) (ToyVal, int) {
 	if isSetWord(tag) {
 
 		GLOB[tag], idx = doTag(tags, idx + 1);	
+		return GLOB[tag], idx;
 
 	} else if isString(tag) {
 
