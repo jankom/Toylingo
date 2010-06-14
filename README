@@ -1,14 +1,42 @@
-ToyLingo
+ ToyLingo ~ toy interpreter for a toy language
+===============================================
 
-== RANDOM IDEAS ==
+== WHAT WORKS NOW ==
+
+
+lisp without parens notation (polish?) works!!!
+
+num1: 100
+num2: add 100 200
+num3: add 100 add 300 add 5
+num5: add inc 2 inc add 1 2
+
+You can define native functions easily in Go!!!
+
+== WHAT NEXT ==
+
+- make string value parsing work
+- think about generic ToyVal and make it smarter, what is right now is probably stupid
+- think about contexts, how to create them, now we have only global context
+- make parser for blocks (without eval)
+- bind contexts to blocks to create Functions!
+- find out how exactly goroutines and channels work in Go and how we can use them in Toylingo
+
+== RANDOM THROWAWAY IDEAS ==
 
 -- main question now? --
 
-Do we do natives as Lua with stack .OR. like Neko-vm with limited number of arguments.
+Do we do natives as Lua with stack .OR. like Neko-vm with limited number of arguments?
+
+A: Lua
 
 ToyValue must be one generic type (Now Literal, but this now is prob. clumsy)
 
+A: __
+
 Do we do polish notation or stack based postfix notation?
+
+A: poslih, rebol like!
 
 
 -- toylingo rebol like --
