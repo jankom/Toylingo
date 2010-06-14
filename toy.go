@@ -134,12 +134,12 @@ func natives() {
 }
 
 func main() {
-	println("~ Toylingo Stacked interpreter v0.0001 ~ ");
+	println("~ Toylingo interpreter v0.0001 ~ ");
 	natives();
 	var in *bufio.Reader = bufio.NewReader(os.Stdin); 
 	var inp string;
-	for (strings.Trim(inp, "\n\r") != "exit!\n") {
-		print(">>");
+	for (strings.Trim(inp, "\n\r") != "exit!") {
+		print(">> ");
 		inp, _ := in.ReadBytes('\n')
 		toyEval(string(inp));
 		printGLOB();
