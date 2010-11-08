@@ -1,52 +1,5 @@
- Wrangle ~ interpreter for a imaginary language
-================================================
-
-== PARSER ==
-
-Int			- literal value
-String		- literal value
-Word		- active item (evaluates their value)
-GetWord		- gets value from word (without 
-SetWord		- binds value to a word
-Block		- doesn't evaluate, just passes along
-
-== SPACES ==
-
-every item has to be separated by space like in Factor. This also 
-meand every character is possible in name Except (1)!! "at-the-start
-
-== LANGUAGE HAS ==
-
-Words
-Values (int,string,block,word,native)
-Contexts (bind them to blocks)
-
-== HOW TO SEPARATE VALUES FROM WORDS ==
-
-Value like Native type has to be separated from any word. It's just temporarily assigned to some
-word. It could be in block of things.
-
-Native is a golang structure, and it can stand on it's own, be assigned to a word, pushed into block, etc.
-
-== NEXT ==
-
-Make set-words work too in the parser
-Make the >> set-word: 123 ;; sample work (no natives needed yet) and other types
-Make Natives and make them work (the notation is already solved in Toylingo)
-
-
-== BLOCKS ==
-
-Alternative syntax for blocks
-
-add: func -> a b | _add a b .    <===>      
-add: func [ a b ] [ _add a b ]
-
-a: either true -> join "mr." n | join "ms." n .     <===>
-a: either true [ join "mr." n ] [ join "ms." n ]
-
-
--old----old----old----old----old----old----old----old----old----old----old----old----old----old---
+ ToyLingo ~ toy interpreter for a toy language
+===============================================
 
 == WHAT WORKS NOW ==
 
@@ -71,7 +24,6 @@ You can define native functions easily in Go!!!
 - make parser for blocks (without eval)
 - bind contexts to blocks to create Functions!
 - find out how exactly goroutines and channels work in Go and how we can use them in Toylingo
-
 
 == RANDOM THROWAWAY IDEAS ==
 
