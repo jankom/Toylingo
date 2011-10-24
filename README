@@ -1,4 +1,4 @@
-NEW CORE (very raw) IDEAS
+NEW CORE (very raw) IDEAS -- just typing my mind... revisit this
 ==============
 Context is the core of it all. We have only contexts and values and blocks.
 
@@ -18,10 +18,42 @@ do-block :: my<-native ;; ( sum 1 a/a )
 
 a way to make a context: { a 5  @native }
 
-so a reader creates empty context and empty block and starts reading program in:
+so a reader takes word-dict and empty block and starts reading program in:
 1 2 3 => {} [ vn:1 vn:2 vn:3 ]
-a 2 3 => { a 1 f } [ c:1 vn:2 vn:3 ] ; vn - value number
-a:2 :a => {a 1 f } [ cs:1 vn: 2  cg:1 ] ; cs - context set cg - context get
+a 2 3 => { a 1 } [ c:1 vn:2 vn:3 ] ; vn - value number
+a: 2 :a => { a 1 } [ cs:1 vn: 2  cg:1 ] ; ws - word set cg - word get ----- editing in crappy online editor , will make it consistent when I get this offlien
+make a context { a: 5 @native }=> { a 1 native 2 } { sw:1  5  ctx:2 }
+{ a: 1} [ a ]
+{ sw:1 5 ctx:2 } ^ ( gw:1 )   ; bind context to block
+
+( do ( bind ( ( def { a: f } 2 )  ( a ) ) )
+
+def takes context and values and serialy sets values to context items
+bind takes context and block and binds them together
+do takes a block and does it 
+
+so context when defined has defined values
+context values can be changed (it would be great if they could be versioned / create new context out of old)
+bind takes whatever context and links it to block (so block has a initially empty uplink to context)
+do takes a block (bound or unbound) and does it, if it finds words that aren't defined in current context it throws an error.
+
+THAT IS ALL WE NEED TO START
+
+Then we add a way to call native funcs (already done to some degree), for funcs to consume words correctly (already done)
+
+
+
+IMPORTANT QUESTIONS!
+
+HOW DO WE HAVE OPTIONAL LAZY ALL THE WAY DOWN / UP ( && )
+
+HOW TO DEFINE SAFE PURE FUNCTIONS????? SO WE CAN MAKE MOBILE (ower the wire) CODE
+
+
+fun ~ a ; a . 2  =>  fun ( a ) ( a ) 2 => ( ( fun ( a ) ( a ) ) 2 ) => returns 2
+
+fun takes two blocks args and body and returns a 
+
 
 
 Wrangle ~ interpreter for a imaginary language
