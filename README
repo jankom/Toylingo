@@ -1,4 +1,30 @@
- Wrangle ~ interpreter for a imaginary language
+NEW CORE (very raw) IDEAS
+==============
+Context is the core of it all. We have only contexts and values and blocks.
+
+everything happens in a context (current-context is a list of contextes)
+
+an item can refer to a value in current context (word refers to value) or itself (number, string, block)
+
+refers to themselves: 'word :get-word  set-word: 12345 "string" [    ]
+
+refers to value in context: word ; can refer to scalar value , or a do-block
+
+do-block is a context tree/list + a block of items , last expression when evaluating block of items is returned
+
+context:: ( native (   sum/2  ) my ( a  ) )
+
+do-block :: my<-native ;; ( sum 1 a/a )
+
+a way to make a context: { a 5  @native }
+
+so a reader creates empty context and empty block and starts reading program in:
+1 2 3 => {} [ vn:1 vn:2 vn:3 ]
+a 2 3 => { a 1 f } [ c:1 vn:2 vn:3 ] ; vn - value number
+a:2 :a => {a 1 f } [ cs:1 vn: 2  cg:1 ] ; cs - context set cg - context get
+
+
+Wrangle ~ interpreter for a imaginary language
 ================================================
 
 == PARSER ==
